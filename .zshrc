@@ -2,6 +2,7 @@ TERM=xterm-256color
 #alimlias
 alias vi='vim'
 alias ls='ls -F --color=auto'
+alias du='du -s'
 #alias emacs='emacs21'
 
 export LS_COLORS='di=01;36'
@@ -33,11 +34,11 @@ colors
 bindkey -e #emaCs key
 
 
-HISTFILE=$HOME/.zsh-history           # ÍúÎò¤ò¥Õ¥¡¥¤¥ë¤ËÊÝÂ¸¤¹¤ë
-HISTSIZE=900000                       # ¥á¥â¥êÆâ¤ÎÍúÎò¤Î¿ô
-SAVEHIST=900000                       # ÊÝÂ¸¤µ¤ì¤ëÍúÎò¤Î¿ô
-setopt extended_history               # ÍúÎò¥Õ¥¡¥¤¥ë¤Ë»þ¹ï¤òµ­Ï¿
-function history-all { history -E 1 } # Á´ÍúÎò¤Î°ìÍ÷¤ò½ÐÎÏ¤¹¤ë
+HISTFILE=$HOME/.zsh-history           # ï¿½ï¿½ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½
+HISTSIZE=900000                       # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¿ï¿½
+SAVEHIST=900000                       # ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¿ï¿½
+setopt extended_history               # ï¿½ï¿½ï¿½ï¿½Õ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½Ï¿
+function history-all { history -E 1 } # ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¤ï¿½ï¿½ï¿½
 
 zstyle ':completion:*:default' menu select=1
 setopt share_history
@@ -60,7 +61,7 @@ HARDCOPYFILE=$HOME/tmp/screen-hardcopy
 touch $HARDCOPYFILE
 
 dabbrev-complete () {
-        local reply lines=80 # 80¹ÔÊ¬
+        local reply lines=80 # 80ï¿½ï¿½Ê¬
         screen -X eval "hardcopy -h $HARDCOPYFILE"
         reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
         compadd - "${reply[@]%[*/=@|]}"
